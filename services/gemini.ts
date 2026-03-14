@@ -64,7 +64,7 @@ export async function evaluateCharacter(answers: Record<number, string>): Promis
 
   let imageUrl = '';
   try {
-    const imagePrompt = `中国传统水墨画风格，红楼梦中的${characterData.name}，${characterData.tags.join('，')}，古典优雅，留白，意境深远，工笔水墨，高级感，半身像`;
+    const imagePrompt = `红楼梦人物形象，${characterData.name}的古装仕女半身像，明清闺阁装扮，发髻钗环，面容与气质符合该角色经典形象，${characterData.tags.join('、')}。中国传统工笔或水墨人物画风格，古典优雅，留白意境，像87版红楼梦或经典红楼插画中的人物造型，清晰可辨的角色肖像`;
     const imageResponse = await ai.models.generateContent({
       model: 'gemini-2.5-flash-image',
       contents: imagePrompt,
